@@ -19,6 +19,6 @@ memory:
 mcpServers:
   supabase-memory:
     type: sse
-    url: "https://librechat-memory-api.onrender.com/mcp"
+    url: "https://librechat-memory-api.onrender.com/sse"
     headers:
       X-Chat-ID: '{{LIBRECHAT_BODY_CONVERSATIONID}}'
