@@ -1,0 +1,12 @@
+version: 1.1.5
+cache: true
+endpoints:
+  custom:
+    - name: "OpenRouter"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default: ["openrouter/auto"]
+        fetch: true
+summarization:
+  model: 'openrouter/auto'
