@@ -10,9 +10,15 @@ endpoints:
         fetch: true
 summarization:
   model: 'openrouter/auto'
+
+# Turn OFF basic memory so it relies 100% on your Supabase Tool
 memory:
-  disabled: false
-  personalize: true
-  agent:
-    provider: "OpenRouter"
-    model: "openrouter/auto"
+  disabled: true
+
+# Connect to your brand new MCP API!
+mcpServers:
+  supabase-memory:
+    type: sse
+    url: "https://librechat-memory-api.onrender.com/mcp"
+    headers:
+      X-Chat-ID: '{{LIBRECHAT_BODY_CONVERSATIONID}}'
