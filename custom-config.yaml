@@ -21,4 +21,4 @@ mcpServers:
     url: "https://librechat-memory-api.onrender.com/sse"
     chatMenu: false
     headers:
-      X-Chat-ID: '{{LIBRECHAT_BODY_CONVERSATIONID|builder-session-active}}'
+      X-Chat-ID: "{{LIBRECHAT_BODY_CONVERSATIONID||builder-session-active}}"
