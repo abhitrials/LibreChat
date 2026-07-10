@@ -13,3 +13,6 @@ summarization:
 memory:
   disabled: false
   personalize: true
+  agent:
+    provider: "OpenRouter"
+    model: "openrouter/auto"
