@@ -19,6 +19,6 @@ mcpServers:
   supabase-memory:
     type: sse
     url: "https://librechat-memory-api.onrender.com/sse"
-    chatMenu: false  # THIS IS THE MAGIC FIX YOU FOUND!
+    chatMenu: false
     headers:
-      X-Chat-ID: '{{LIBRECHAT_BODY_CONVERSATIONID}}'
+      X-Chat-ID: '{{LIBRECHAT_BODY_CONVERSATIONID|builder-session-active}}'
