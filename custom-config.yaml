@@ -11,7 +11,6 @@ endpoints:
 summarization:
   model: 'openrouter/auto'
 
-# Basic memory remains OFF
 memory:
   disabled: true
 
@@ -20,5 +19,3 @@ mcpServers:
     type: sse
     url: "https://librechat-memory-api.onrender.com/sse"
     chatMenu: false
-    headers:
-      X-Chat-ID: "{{LIBRECHAT_BODY_CONVERSATIONID||builder-session-active}}"
