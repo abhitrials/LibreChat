@@ -10,3 +10,6 @@ endpoints:
         fetch: true
 summarization:
   model: 'openrouter/auto'
+memory:
+  disabled: false
+  personalize: true
