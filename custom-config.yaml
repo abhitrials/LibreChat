@@ -17,5 +17,6 @@ memory:
 mcpServers:
   supabase-memory:
     type: sse
-    url: "https://librechat-memory-api.onrender.com/sse"
+    # --- NEW URL: This uses Render's private internal network! ---
+    url: "http://librechat-memory-api:10000/sse"
     chatMenu: false
