@@ -2,7 +2,7 @@ version: 1.1.5
 cache: true
 endpoints:
   custom:
-    # 1. The Normal OpenRouter (For GLM 4.7 and others)
+    # 1. Keep OpenRouter for your other models (like GLM 4.7)
     - name: "OpenRouter"
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://openrouter.ai/api/v1"
@@ -10,13 +10,15 @@ endpoints:
         default: ["openrouter/auto"]
         fetch: true
         
-    # 2. The Aion Interceptor Proxy (Routes through your new Render server!)
-    - name: "AionProxy"
-      apiKey: "${OPENROUTER_KEY}"
-      baseURL: "https://librechat-memory-aion-api.onrender.com/v1"
+    # 2. NEW: Direct connection to Aion Labs!
+    - name: "Aion Labs"
+      apiKey: "${AION_API_KEY}"
+      # Note: Check their "Quickstart" tab to confirm this is their exact URL, but this is the industry standard format:
+      baseURL: "https://api.aionlabs.ai/v1" 
       models:
-        default: ["aion-labs/aion-2.0"]
-        fetch: false
+        default: ["aion-labs/aion-3.0-mini"]
+        fetch: true
+
 summarization:
   model: 'openrouter/auto'
 
@@ -26,10 +28,5 @@ memory:
 mcpServers:
   supabase-memory:
     type: sse
-    # Revert back to the secure public URL
     url: "https://librechat-memory-api.onrender.com/sse"
-    chatMenu: false
-  aion-memory:
-    type: sse
-    url: "https://librechat-memory-aion-api.onrender.com/sse"
     chatMenu: false
