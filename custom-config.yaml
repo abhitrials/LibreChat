@@ -13,11 +13,14 @@ endpoints:
     # 2. NEW: Direct connection to Aion Labs!
     - name: "Aion Labs"
       apiKey: "${AION_API_KEY}"
-      # Note: Check their "Quickstart" tab to confirm this is their exact URL, but this is the industry standard format:
       baseURL: "https://api.aionlabs.ai/v1" 
       models:
-        default: ["aion-labs/aion-3.0-mini"]
-        fetch: true
+        default: 
+          - "aion-labs/aion-2.0"
+          - "aion-labs/aion-2.5"
+          - "aion-labs/aion-3.0"
+          - "aion-labs/aion-3.0-mini"
+        fetch: false
 
 summarization:
   model: 'openrouter/auto'
