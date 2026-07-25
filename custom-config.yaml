@@ -2,12 +2,21 @@ version: 1.1.5
 cache: true
 endpoints:
   custom:
+    # 1. The Normal OpenRouter (For GLM 4.7 and others)
     - name: "OpenRouter"
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://openrouter.ai/api/v1"
       models:
         default: ["openrouter/auto"]
         fetch: true
+        
+    # 2. The Aion Interceptor Proxy (Routes through your new Render server!)
+    - name: "AionProxy"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://librechat-memory-aion-api.onrender.com/v1"
+      models:
+        default: ["aion-labs/aion-2.0"]
+        fetch: false
 summarization:
   model: 'openrouter/auto'
 
