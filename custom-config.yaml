@@ -20,3 +20,7 @@ mcpServers:
     # Revert back to the secure public URL
     url: "https://librechat-memory-api.onrender.com/sse"
     chatMenu: false
+  aion-memory:
+    type: sse
+    url: "https://librechat-memory-aion-api.onrender.com/sse"
+    chatMenu: false
