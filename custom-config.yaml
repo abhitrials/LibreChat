@@ -10,10 +10,11 @@ endpoints:
         default: ["openrouter/auto"]
         fetch: true
         
-    # 2. NEW: Direct connection to Aion Labs!
+    # 2. NEW: Aion Labs via Interceptor Proxy
     - name: "Aion Labs"
       apiKey: "${AION_API_KEY}"
-      baseURL: "https://api.aionlabs.ai/v1" 
+      # CHANGE THIS LINE TO ROUTE THROUGH YOUR SERVER:
+      baseURL: "https://librechat-memory-api.onrender.com/v1" 
       models:
         default: 
           - "aion-labs/aion-2.0"
