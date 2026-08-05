@@ -12,7 +12,7 @@ endpoints:
           - "meta-llama/llama-3.3-70b-instruct"
           - "z-ai/glm-5.2"
           - "openrouter/auto"
-        fetch: false
+        fetch: true
 
     # 2. Aion Labs via Interceptor Proxy
     - name: "Aion Labs"
