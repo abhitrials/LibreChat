@@ -7,12 +7,12 @@ endpoints:
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://librechat-memory-api.onrender.com/v1"
       models:
-        default: 
+        default:
           - "meta-llama/llama-3.3-70b-instruct:nitro"
           - "meta-llama/llama-3.3-70b-instruct"
           - "z-ai/glm-5.2"
           - "openrouter/auto"
-        fetch: true
+      fetch: true
 
     # 2. Aion Labs via Interceptor Proxy
     - name: "Aion Labs"
@@ -24,7 +24,17 @@ endpoints:
           - "aion-labs/aion-2.5"
           - "aion-labs/aion-3.0"
           - "aion-labs/aion-3.0-mini"
-        fetch: false
+      fetch: false
+
+    # 3. Abliteration AI (Routed through your custom Proxy!)
+    - name: "AbliterationAI"
+      apiKey: "${ABLITERATION_API_KEY}"
+      baseURL: "https://librechat-memory-api.onrender.com/v1"
+      models:
+        default:
+          - "abliterated-model-large"
+      titleConvo: true
+      modelDisplayLabel: "GLM 5.2"
 
 summarization:
   model: "openrouter/auto"
