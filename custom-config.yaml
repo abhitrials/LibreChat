@@ -12,7 +12,7 @@ endpoints:
           - "meta-llama/llama-3.3-70b-instruct"
           - "z-ai/glm-5.2"
           - "openrouter/auto"
-        fetch: true  # <-- FIXED: Indented correctly inside the models block
+        fetch: true
 
     # 2. Aion Labs via Interceptor Proxy
     - name: "Aion Labs"
@@ -24,7 +24,7 @@ endpoints:
           - "aion-labs/aion-2.5"
           - "aion-labs/aion-3.0"
           - "aion-labs/aion-3.0-mini"
-      fetch: false
+        fetch: false
 
     # 3. Abliteration AI (Routed through your custom Proxy!)
     - name: "AbliterationAI"
@@ -33,8 +33,19 @@ endpoints:
       models:
         default:
           - "abliterated-model-large"
+        fetch: false
       titleConvo: true
       modelDisplayLabel: "GLM 5.2"
+
+    # 4. Novita AI (Routed through your custom Proxy!)
+    - name: "Novita AI"
+      apiKey: "${NOVITA_API_KEY}"
+      baseURL: "https://librechat-memory-api.onrender.com/v1"
+      models:
+        default:
+          - "novita/nousresearch/hermes-3-llama-3.1-70b"
+          - "novita/meta-llama/llama-3.1-70b-instruct"
+        fetch: false
 
 summarization:
   model: "openrouter/auto"
