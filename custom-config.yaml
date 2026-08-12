@@ -42,10 +42,7 @@ endpoints:
       apiKey: "${NOVITA_API_KEY}"
       baseURL: "https://librechat-memory-api.onrender.com/v1"
       models:
-        default:
-          - "novita/nousresearch/hermes-3-llama-3.1-70b"
-          - "novita/meta-llama/llama-3.1-70b-instruct"
-        fetch: false
+        fetch: true
 
 summarization:
   model: "openrouter/auto"
